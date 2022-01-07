@@ -64,7 +64,14 @@
         <section class="section hero">
           <div class="container">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-button">Заказать услугу</button>
+            <button type="button" class="hero-button" data-modal-open>Заказать услугу</button>
+            <div class="backdrop is-hidden" data-modal>
+              <div class="modal">
+                <!-- <h2 class="modal-title">Окно заказа услуги</h2>
+                <p class="modal-content">Инструкция по заказу услуги</p> -->
+                <button type="button" data-modal-close>Закрыть</button>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -524,11 +531,6 @@
         </section>
       </div>
     </footer>
-
-    <!-- добавить в разметку специальные атрибуты, по которым скрипт ищет элементы:
-      data-modal-open - на кнопку открытия модального окна.
-      data-modal-close - на кнопку закрытия модального окна.
-      data-modal - на бекдроп модального окна. -->
     <script src="./js/modal.js"></script>
   </body>
 </html>
