@@ -246,9 +246,10 @@ body {
   left: 50%;
   width: 528px;
   height: 581px;
+  transform: translate(-50%, -50%);
+  /* Или можно так, но это не гибко:
   margin-left: calc(-1 * (528px / 2));
-  margin-top: calc(-1 * (581px / 2));
-
+  margin-top: calc(-1 * (581px / 2)); */
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -264,7 +265,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: scale, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
