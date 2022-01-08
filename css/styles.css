@@ -321,20 +321,21 @@ body {
   margin-right: 30px;
 }
 
-.services-item-link {
+.services-item {
   position: relative;
   display: block;
 }
 
 .services-item-subtitle {
   position: absolute;
-  width: 100%;
   left: 0;
   bottom: 0;
-  padding: 27px 82px;
+
+  width: 100%;
+  padding: 27px 0;
 
   font-weight: 700;
-  line-height: 1.14;
+  line-height: 1.17;
   text-transform: uppercase;
   text-align: center;
 
