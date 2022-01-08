@@ -305,28 +305,28 @@ body {
 
 /* ------------------ Секция Profile ------------------ */
 
-.profile {
+.services {
   padding-top: 0;
 }
 
-.profile-title {
+.services-title {
   margin-bottom: 50px;
 }
 
-.profile-list {
+.services-list {
   display: flex;
 }
 
-.profile-item:not(:last-child) {
+.services-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.profile-item-link {
+.services-item-link {
   position: relative;
   display: block;
 }
 
-.profile-item-subtitle {
+.services-item-subtitle {
   position: absolute;
   width: 100%;
   left: 0;
