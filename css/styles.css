@@ -23,6 +23,7 @@
     0px 2px 2px rgba(0, 0, 0, 0.12);
   --portfolio-item-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  --main-effect: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ---------------- Style Reset ---------------- */
@@ -176,7 +177,7 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-effect);
 }
 
 .contact-link {
@@ -188,7 +189,7 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-effect);
 }
 
 .header-icon {
@@ -245,8 +246,7 @@ body {
   letter-spacing: 0.06em;
   border: none;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-effect), box-shadow var(--main-effect);
 }
 
 .hero-button:hover,
@@ -404,8 +404,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--social-icon-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-effect), color var(--main-effect);
 }
 
 .team-icon {
@@ -427,12 +426,12 @@ body {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-effect);
 }
 
 .team-icon {
   fill: var(--social-icon-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--main-effect);
 }
 
 .team-icon-link:hover,
@@ -475,8 +474,7 @@ body {
   border: var(--clients-border);
   border-radius: 4px;
   color: var(--social-icon-color);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--main-effect), color var(--main-effect);
 }
 
 .icon-clients {
@@ -515,8 +513,8 @@ body {
   text-align: center;
   border: none;
   border-radius: 4px;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--main-effect), color var(--main-effect),
+    background-color var(--main-effect);
 }
 
 .filter-button:hover,
@@ -548,7 +546,7 @@ body {
 
 .portfolio-link {
   display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--main-effect);
 }
 
 .portfolio-link:hover,
@@ -590,7 +588,7 @@ body {
   color: var(--primary-white-color);
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--main-effect);
 }
 
 .portfolio-link:hover .portfolio-overlay,
@@ -637,7 +635,7 @@ body {
 
 .footer-link {
   color: var(--primary-white-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-effect);
 }
 
 .footer-link:hover,
@@ -677,7 +675,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--primary-white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-effect);
 }
 
 .footer-icon-item:not(:last-child) {
@@ -704,8 +702,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--main-effect), visibility var(--main-effect);
 }
 
 .backdrop.is-hidden {
@@ -714,14 +711,26 @@ body {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(2);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
   /* Или можно так, но это не гибко:
   margin-left: calc(-1 * (528px / 2));
   margin-top: calc(-1 * (581px / 2)); */
+  transition: transform var(--main-effect), opacity var(--main-effect),
+    visibility var(--main-effect);
 
   min-width: 528px;
   min-height: 581px;
@@ -757,8 +766,18 @@ button.close {
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transition: transform var(--main-effect), border var(--main-effect),
+    background-color var(--main-effect), color var(--main-effect);
 }
 
+button.close:hover,
+button.close:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+  border: transparent;
+  transform: rotate(180deg);
+}
 .icon-close {
   width: 11px;
   height: 11px;
