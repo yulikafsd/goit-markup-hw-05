@@ -9,12 +9,12 @@
     --helper-text-color: #8E8F99;   /* LIGHT SLATE */
     --accent-color: #E7E9FC;    /* CORNFLOWER */
     --light-mode-color: #F4F4FD;    /* CLOUD */
-    --modal-overlay-color: #2E2F42;   /* NAVY BLUE MODAL */
 
     --hero-background-color: #2E2F42;   /* GREY */
     --white-background-color: #FFFFFF;    /* WHITE */
     --modal-background-color: #FCFCFC;    /* DAIRY */
     --modal-overlay-background-color: rgba(46, 47, 66, 0.4);
+    --input-border-color: rgba(46, 47, 66, 0.4);
 
     --font-family-body: "Roboto", sans-serif;
     --font-family-logo: "Raleway", sans-serif;
@@ -82,6 +82,11 @@ address {       /* Прибираємо дефолтний курсив у addre
 
 input {
 	font-family: inherit;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
 }
 
 /* #endregion */
@@ -166,11 +171,11 @@ main {              /* Крок 2. Притискаємо футер вниз */
 .nav-link {
     font-weight: var(--font-weight-medium);
     color: var(--dark-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -225,7 +230,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     color: var(--white-background-color);
 }
 
-.hero-button {
+.button {
     display: block;
     min-width: 169px;
     margin: 0 auto;
@@ -238,11 +243,11 @@ main {              /* Крок 2. Притискаємо футер вниз */
     color: var(--white-background-color);
     background-color: var(--primary-brand-color);
     box-shadow: var(--button-shadow);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.button:hover,
+.button:focus {
     background-color: var(--pressed-state-color);
 }
 /* #endregion */
@@ -366,7 +371,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     height: 40px;
     border-radius: 50%;
     background-color: var(--primary-brand-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
@@ -389,7 +394,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
 
 .portfolio-list-item {
     flex-basis: calc((100% - (24px*2)) / 3);
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover,
@@ -410,7 +415,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     height: 100%;
     padding: 40px 32px;
     transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--light-mode-color);
     background-color: var(--primary-brand-color);
 }
@@ -485,33 +490,147 @@ main {              /* Крок 2. Притискаємо футер вниз */
     justify-content: center;
     align-items: center;
     
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--modal-overlay-background-color);
 }
 
 .modal-overlay.is-open {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 408px;
-    max-height: 584px;
+    max-height: 100%;
 
-    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 72px 24px 24px 24px;
     border-radius: var(--standard-border-radius);
     background-color: var(--modal-background-color);
     box-shadow: var(--modal-shadow);
     overflow-y: auto;
 }
 
+.modal-overlay.is-open .modal{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
 
+/* #endregion */
+
+/* Form #region */
+
+.contact-form {
+}
+
+.contact-form-title {
+    margin-bottom: 16px;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.contact-form-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.contact-form-label-text {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: var(--line-height-logo);
+    letter-spacing: var(--letter-spacing-second);
+    color: var(--helper-text-color);
+}
+
+.contact-form-input, .contact-form-textarea {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+}
+
+.contact-form-input {
+    padding: 11px 11px 11px 38px;
+    height: 40px;
+}
+
+.contact-form-textarea {
+    padding: 8px 16px;
+    height: 120px;
+}
+
+.contact-form-textarea::placeholder{
+    font-size: 12px;
+    line-height: var(--line-height-logo);
+    letter-spacing: var(--letter-spacing-second);
+    color: var(--input-border-color);
+}
+
+.contact-form-label:hover .contact-form-input, 
+.contact-form-label:hover .contact-form-textarea,
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+    border: 1px solid var(--primary-brand-color);
+}
+
+.contact-form-icon {
+}
+
+.contact-form-label-textarea {
+    margin-bottom: 16px;
+}
+
+.contact-form-label-policy {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 12px;
+    line-height: var(--line-height-logo);
+    letter-spacing: var(--letter-spacing-second);
+    color: var(--helper-text-color);
+}
+
+.contact-form-input-policy {
+}
+
+.contact-form-icon-checkbox {
+}
+
+.contact-form-checkbox-text, .contact-form-policy-link {
+}
+
+.contact-form-checkbox-text {
+}
+
+.contact-form-policy-link {
+    line-height: 1.33;
+    text-decoration: underline;
+    color: var(--primary-brand-color);
+}
+
+.contact-form-button {
+}
+
+.button-close {
+}
+
+.close-icon-close {
+}
+
+/* #endregion */
 /* помістити картинку в обгортку */
 
 /* .thumb {
