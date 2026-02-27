@@ -686,7 +686,7 @@ body {
 }
 
 .contact-form-label-policy {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     font-size: 12px;
     line-height: 1.17;
