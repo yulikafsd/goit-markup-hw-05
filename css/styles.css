@@ -521,7 +521,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
 
 .subscribe-form-button {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     min-width: 165px;
     padding: 8px 24px;
@@ -538,6 +538,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
 }
 
 .button-icon {
+    margin-left: 16px;
     fill: var(--white-background-color)
 }
 
