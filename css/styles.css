@@ -670,15 +670,14 @@ body {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-form-input:hover .contact-form-icon,
-.contact-form-input:focus .contact-form-icon {
+.contact-form-input:hover + .contact-form-icon,
+.contact-form-input:focus + .contact-form-icon {
     fill: var(--primary-brand-color);
 }
 
 .label-input-svg-wrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
     margin-bottom: 24px;
     font-size: 12px;
     line-height: var(--line-height-logo);
@@ -686,10 +685,23 @@ body {
     color: var(--helper-text-color);
 }
 
+.contact-form-label-policy {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+}
+
 .svg-wrapper {
+
+    margin-right: 8px; 
+    flex-shrink: 0;
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    margin-right: 8px;
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -703,7 +715,7 @@ body {
     height: 8px;
 }
 
-.contact-form-checkbox-policy:checked .svg-wrapper {
+.contact-form-checkbox-policy:checked + .contact-form-label-policy .svg-wrapper {
     border: none;
     background-color: var(--pressed-state-color);
     fill: var(--light-mode-color);
