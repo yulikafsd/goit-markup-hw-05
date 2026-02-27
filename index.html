@@ -818,10 +818,7 @@
                     novalidate
                 >
                     <div class="label-input-wrapper">
-                        <label
-                            class="contact-form-label contact-form-label-text"
-                            for="user-name"
-                        >
+                        <label class="contact-form-label" for="user-name">
                             Name</label
                         >
                         <div class="input-svg-wrapper">
@@ -846,9 +843,7 @@
                     </div>
 
                     <div class="label-input-wrapper">
-                        <label
-                            class="contact-form-label contact-form-label-text"
-                            for="user-phone"
+                        <label class="contact-form-label" for="user-phone"
                             >Phone</label
                         >
                         <div class="input-svg-wrapper">
@@ -870,10 +865,7 @@
                     </div>
 
                     <div class="label-input-wrapper">
-                        <label
-                            class="contact-form-label contact-form-label-text"
-                            for="user-email"
-                        >
+                        <label class="contact-form-label" for="user-email">
                             Email</label
                         >
                         <div class="input-svg-wrapper">
@@ -895,9 +887,7 @@
                     </div>
 
                     <div class="label-input-wrapper">
-                        <label
-                            class="contact-form-label contact-form-label-textarea contact-form-label-text"
-                            for="user-comment"
+                        <label class="contact-form-label" for="user-comment"
                             >Comment</label
                         >
                         <textarea
@@ -908,30 +898,39 @@
                         ></textarea>
                     </div>
 
-                    <label class="contact-form-label-policy">
+                    <div class="label-input-svg-wrapper">
                         <input
                             type="checkbox"
-                            name="policy"
+                            name="user-privacy"
+                            id="user-privacy"
+                            value="true"
                             class="contact-form-checkbox-policy visually-hidden"
                         />
-                        <svg
-                            class="contact-form-icon-checkbox"
-                            width="16"
-                            height="16"
+                        <label
+                            class="contact-form-label-policy"
+                            for="user-privacy"
                         >
-                            <use href="./images/icons.svg#icon-check"></use>
-                        </svg>
-                        <span class="contact-form-checkbox-text"
-                            >I accept the terms and conditions of the
+                            I accept the terms and conditions of the
+                            <span class="svg-wrapper">
+                                <svg
+                                    class="contact-form-icon-checkbox"
+                                    width="16"
+                                    height="16"
+                                >
+                                    <use
+                                        href="./images/icons.svg#icon-check"
+                                    ></use>
+                                </svg>
+                            </span>
                             <a
                                 href="#"
                                 target="_blank"
                                 class="contact-form-policy-link"
                                 rel="noreferrer noopener"
                                 >Privacy Policy</a
-                            ></span
-                        >
-                    </label>
+                            >
+                        </label>
+                    </div>
 
                     <button type="submit" class="button contact-form-button">
                         Send
