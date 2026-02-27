@@ -785,18 +785,17 @@
                         </ul>
                     </div>
                     <div class="footer-subscribe-wrapper">
+                        <p class="subscribe-text">Subscribe</p>
                         <form name="subscribe-form" class="subscribe-form">
-                            <label for="subscribe" class="subscribe-form-label">
-                                Subscribe
-                            </label>
-                            <div class="subscribe-form-field">
+                            <label class="subscribe-form-label">
                                 <input
                                     class="subscribe-form-input"
                                     type="email"
                                     name="subscribe"
                                     placeholder="E-mail"
-                                    id="subscribe"
                                 />
+                            </label>
+                            <div class="subscribe-form-field">
                                 <button
                                     class="button subscribe-form-button"
                                     type="submit"
@@ -817,106 +816,123 @@
                     </div>
                 </div>
             </footer>
-        </div>
-        <div class="modal-overlay" data-modal>
-            <div class="modal">
-                <form
-                    name="contact-form"
-                    class="contact-form"
-                    autocomplete="off"
-                    novalidate
-                >
-                    <p class="contact-form-title">
-                        Leave your contacts and we will call you back
-                    </p>
 
-                    <label class="contact-form-label">
-                        <span class="contact-form-label-text">Name</span>
-                        <input
-                            type="text"
-                            name="name"
-                            class="contact-form-input"
-                            autofocus
-                            placeholder=" "
-                        />
-                        <svg class="contact-form-icon" width="18" height="24">
-                            <use href="./images/icons.svg#icon-person"></use>
+            <div class="modal-overlay" data-modal>
+                <div class="modal">
+                    <button type="button" class="button-close" data-modal-close>
+                        <svg class="close-icon-close" width="8" height="8">
+                            <use href="./images/icons.svg#icon-close"></use>
                         </svg>
-                    </label>
-
-                    <label class="contact-form-label">
-                        <span class="contact-form-label-text">Phone</span>
-                        <input
-                            type="tel"
-                            name="tel"
-                            class="contact-form-input"
-                            placeholder=" "
-                        />
-                        <svg class="contact-form-icon" width="18" height="24">
-                            <use href="./images/icons.svg#icon-phone"></use>
-                        </svg>
-                    </label>
-
-                    <label class="contact-form-label">
-                        <span class="contact-form-label-text">Email</span>
-                        <input
-                            type="email"
-                            name="email"
-                            class="contact-form-input"
-                            placeholder=" "
-                        />
-                        <svg class="contact-form-icon" width="18" height="24">
-                            <use href="./images/icons.svg#icon-email"></use>
-                        </svg>
-                    </label>
-
-                    <label
-                        class="contact-form-label contact-form-label-textarea"
-                    >
-                        <span class="contact-form-label-text">Comment</span>
-                        <textarea
-                            id="comment"
-                            name="comment"
-                            class="contact-form-textarea"
-                            placeholder="Text input"
-                        ></textarea>
-                    </label>
-
-                    <label class="contact-form-label-policy">
-                        <input
-                            type="checkbox"
-                            name="policy"
-                            class="contact-form-checkbox-policy visually-hidden"
-                        />
-                        <svg
-                            class="contact-form-icon-checkbox"
-                            width="16"
-                            height="16"
-                        >
-                            <use href="./images/icons.svg#icon-check"></use>
-                        </svg>
-                        <span class="contact-form-checkbox-text"
-                            >I accept the terms and conditions of the
-                            <a
-                                href="#"
-                                target="_blank"
-                                class="contact-form-policy-link"
-                                rel="noreferrer noopener"
-                                >Privacy Policy</a
-                            ></span
-                        >
-                    </label>
-
-                    <button type="submit" class="button contact-form-button">
-                        Send
                     </button>
-                </form>
+                    <form
+                        name="contact-form"
+                        class="contact-form"
+                        autocomplete="off"
+                        novalidate
+                    >
+                        <p class="contact-form-title">
+                            Leave your contacts and we will call you back
+                        </p>
 
-                <button type="button" class="button-close" data-modal-close>
-                    <svg class="close-icon-close" width="8" height="8">
-                        <use href="./images/icons.svg#icon-close"></use>
-                    </svg>
-                </button>
+                        <label class="contact-form-label">
+                            <span class="contact-form-label-text">Name</span>
+                            <input
+                                type="text"
+                                name="name"
+                                class="contact-form-input"
+                                autofocus
+                                placeholder=" "
+                            />
+                            <svg
+                                class="contact-form-icon"
+                                width="18"
+                                height="24"
+                            >
+                                <use
+                                    href="./images/icons.svg#icon-person"
+                                ></use>
+                            </svg>
+                        </label>
+
+                        <label class="contact-form-label">
+                            <span class="contact-form-label-text">Phone</span>
+                            <input
+                                type="tel"
+                                name="tel"
+                                class="contact-form-input"
+                                placeholder=" "
+                            />
+                            <svg
+                                class="contact-form-icon"
+                                width="18"
+                                height="24"
+                            >
+                                <use href="./images/icons.svg#icon-phone"></use>
+                            </svg>
+                        </label>
+
+                        <label class="contact-form-label">
+                            <span class="contact-form-label-text">Email</span>
+                            <input
+                                type="email"
+                                name="email"
+                                class="contact-form-input"
+                                placeholder=" "
+                            />
+                            <svg
+                                class="contact-form-icon"
+                                width="18"
+                                height="24"
+                            >
+                                <use href="./images/icons.svg#icon-email"></use>
+                            </svg>
+                        </label>
+
+                        <label
+                            class="contact-form-label contact-form-label-textarea"
+                        >
+                            <span class="contact-form-label-text">Comment</span>
+                            <textarea
+                                id="comment"
+                                name="comment"
+                                class="contact-form-textarea"
+                                placeholder="Text input"
+                            ></textarea>
+                        </label>
+
+                        <label class="contact-form-label-policy">
+                            <input
+                                type="checkbox"
+                                name="policy"
+                                class="contact-form-checkbox-policy visually-hidden"
+                            />
+                            <svg
+                                class="contact-form-icon-checkbox"
+                                width="16"
+                                height="16"
+                            >
+                                <use href="./images/icons.svg#icon-check"></use>
+                            </svg>
+                            <span class="contact-form-checkbox-text"
+                                >I accept the terms and conditions of the
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    class="contact-form-policy-link"
+                                    rel="noreferrer noopener"
+                                    >Privacy Policy</a
+                                ></span
+                            >
+                        </label>
+
+                        <button
+                            type="submit"
+                            class="button contact-form-button"
+                        >
+                            Send
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         <script src="./js/modal.js"></script>

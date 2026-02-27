@@ -468,7 +468,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     margin-right: 80px;
 }
 
-.socials-text, .subscribe-form-label {
+.socials-text, .subscribe-text {
     margin-bottom: 16px;
     font-weight: var(--font-weight-medium);
     color: var(--white-background-color);
@@ -479,11 +479,12 @@ main {              /* Крок 2. Притискаємо футер вниз */
     background-color: var(--success-color);
 }
 
-.subscribe-form-label {
+.subscribe-text {
     display: block;
+
 }
 
-.subscribe-form-field {
+.subscribe-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -574,6 +575,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     transform: translate(-50%, -50%) scale(0.5);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 408px;
+    min-height: 584px;
     max-height: 100%;
 
     opacity: 0;
@@ -583,6 +585,7 @@ main {              /* Крок 2. Притискаємо футер вниз */
     background-color: var(--modal-background-color);
     box-shadow: var(--modal-shadow);
     overflow-y: auto;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open .modal{
