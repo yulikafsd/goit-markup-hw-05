@@ -694,10 +694,9 @@ body {
 }
 
 .svg-wrapper {
-
     margin-right: 8px; 
     flex-shrink: 0;
-
+    
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -722,6 +721,7 @@ body {
 }
 
 .contact-form-policy-link {
+    margin-left: 4px;
     line-height: 1.33;
     text-decoration: underline;
     color: var(--primary-brand-color);
