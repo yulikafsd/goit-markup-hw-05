@@ -534,6 +534,10 @@ main {              /* Крок 2. Притискаємо футер вниз */
     font-size: 16px;
 }
 
+.button-icon {
+    fill: var(--white-background-color)
+}
+
 /* #endregion */
 
 /* #region Modal */
