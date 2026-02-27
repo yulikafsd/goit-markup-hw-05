@@ -492,10 +492,12 @@ main {              /* Крок 2. Притискаємо футер вниз */
 }
 
 .subscribe-form-input {
+    width: 264px;
+    height: 40px; 
     padding: 8px 16px;
     border: 1px solid var(--white-background-color);
     border-radius: var(--standard-border-radius);
-    width: 264px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: transparent;
     font-size: 12px;
     line-height: 2;
