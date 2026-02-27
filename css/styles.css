@@ -104,16 +104,6 @@ body {
     background-color: var(--white-background-color);
 }
 
-.page-container {   /* Крок 1. Притискаємо футер вниз */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {              /* Крок 2. Притискаємо футер вниз */
-    flex-grow: 1;
-}
-
 .container { 
     max-width: 1158px;
     padding: 0 15px;
@@ -754,4 +744,17 @@ main {              /* Крок 2. Притискаємо футер вниз */
     height: 100%;
     width: 100%;
 	object-fit: cover;
+} */
+
+
+/* Крок 1. Притискаємо футер вниз */
+/* .page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Крок 2. Притискаємо футер вниз */
+/* main {
+    flex-grow: 1;
 } */
